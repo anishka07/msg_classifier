@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import nltk
 import pickle
 import string
@@ -11,7 +16,7 @@ model_pkl_path = Settings.MODEL_PATH
 vectorizer_pkl_path = Settings.VECTORIZER_PATH
 
 
-def text_transformer(text):
+def text_transformer(text) -> str:
     text = text.lower()
     text = nltk.word_tokenize(text)  # Tokenization
     y = [i for i in text if i.isalnum()]  # Remove special characters
@@ -32,6 +37,7 @@ st.title("Message/Email Spam Classifier")
 
 input_msg = st.text_area("Enter your message/email")
 
+
 if st.button("Predict"):
     transformed_sms = text_transformer(input_msg)
     vector_input = vectorizer.transform([transformed_sms])
@@ -40,3 +46,4 @@ if st.button("Predict"):
         st.header("Spam")
     else:
         st.header("Not Spam")
+
