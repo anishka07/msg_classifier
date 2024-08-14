@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project focuses on detecting spam messages using machine learning. It emphasizes Exploratory Data Analysis (EDA) to enhance model performance.
+This project focuses on detecting spam messages using machine learning. It emphasizes on Exploratory Data Analysis (EDA) to enhance model performance.
 
 ## Project Structure
 
