@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package spamdetector;
+
+message SpamReq {
+    string message = 1;
+}
+
+message SpamRes {
+    bool result = 1;
+}
+
+service SpamDetector {
+    rpc Predict (SpamReq) returns (SpamRes);
+}
